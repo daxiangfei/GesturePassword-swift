@@ -34,8 +34,7 @@ class GesturePasswordIndicatorView: UIView {
     func setPasswordString(_ password:String) {
         for charact in password.characters {
             let currentStr = String(charact)
-            let currentInt = currentStr.toInt() ?? 10
-            if currentInt > 9 {break}
+            guard let currentInt = currentStr.toInt() , currentInt < 9 else {return}
             buttonArray[currentInt].selected = true
         }
     }
@@ -73,21 +72,23 @@ class IndicatorGesturePasswordButton: UIView {
     
     override func draw(_ rect: CGRect) {
         super.draw(rect)
-        let context = UIGraphicsGetCurrentContext()
-        let frame = CGRect(x: 0.5, y: 0.5, width: rect.size.width-1, height: rect.size.height-1);
-        context?.addEllipse(in: frame)
+        
+        guard let context = UIGraphicsGetCurrentContext() else {return}
+        
+        let frame = CGRect(x: 0.5, y: 0.5, width: rect.size.width-1, height: rect.size.height-1)
+        
+        context.addEllipse(in: frame)
         
         //如果已经选中
         if (selected) {
-            context?.setFillColor(red: 254/255, green: 129/255, blue: 0/255,alpha: 1);
-            context?.fillPath();
+            context.setFillColor(red: 254/255, green: 129/255, blue: 0/255,alpha: 1);
+            context.fillPath();
         }else {
-            context?.setStrokeColor(red: 128/255,green: 128/255,blue: 128/255,alpha: 1);
-            context?.setLineWidth(0.5)
-            context?.strokePath()
-            
-            context?.setFillColor(red: 254/255, green: 129/255, blue: 0/255,alpha: 0);
-            context?.fillPath()
+            context.setStrokeColor(red: 128/255,green: 128/255,blue: 128/255,alpha: 1);
+            context.setLineWidth(0.5)
+            context.strokePath()
+            context.setFillColor(red: 254/255, green: 129/255, blue: 0/255,alpha: 0);
+            context.fillPath()
         }
         
     }
@@ -96,5 +97,19 @@ class IndicatorGesturePasswordButton: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
+}
+
+public extension String {
+    func toDouble() -> Double? {
+        return NumberFormatter().number(from: self)?.doubleValue
+    }
+    
+    func toFloat() -> Float? {
+        return NumberFormatter().number(from: self)?.floatValue
+    }
+    
+    func toInt() -> Int? {
+        return NumberFormatter().number(from: self)?.intValue
+    }
 }
 

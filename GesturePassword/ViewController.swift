@@ -19,7 +19,18 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+    
+    @IBAction func showSetGesturePS(_ sender: UIButton) {
+        let vc = GesturePasswordVC()
+        vc.actionType = .set
+        present(vc, animated: true, completion: nil)
+    }
+    
+    @IBAction func showInspectGesturePS(_ sender: UIButton) {
+        let vc = GesturePasswordVC()
+        vc.actionType = .inspect
+        present(vc, animated: true, completion: nil)
+    }
 
 }
 

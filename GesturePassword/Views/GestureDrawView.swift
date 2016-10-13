@@ -10,15 +10,10 @@ import UIKit
 
 let XBorderMargin:CGFloat = 50 //最左边的button距离view左边的距离
 let YBorderMargin:CGFloat = 10
-
 let GestureDrawViewHeight:CGFloat = 250
-
 let ButtonWidth:CGFloat = 40  //宽度
-
 let LineWidth:CGFloat = 4  // 连接时 button和button之间连线的 线宽
-
 let ScreenWidth = UIScreen.main.bounds.width
-
 
 class GestureDrawView: UIView {
     
@@ -27,33 +22,23 @@ class GestureDrawView: UIView {
     fileprivate var success = true
     fileprivate var buttonArray = [GesturePasswordButton]()
     fileprivate var selectedButtonArray = [GesturePasswordButton]()
-    
     fileprivate var touchesArray = [Dictionary<String,String>]() //记录已经连接的bt的中心位置
     fileprivate var touchedArray = [String]()  //记录结果
-    
     fileprivate var lineEndPoint = CGPoint.zero
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        
         self.backgroundColor = UIColor.white
-        
         for index in 0..<9 {
-            
             let view = GesturePasswordButton()
-            
             let Xspace = (ScreenWidth-XBorderMargin*2-ButtonWidth*3)/2
             let Yspace = (GestureDrawViewHeight-YBorderMargin*2-ButtonWidth*3)/2
-            
             let x = XBorderMargin + CGFloat(index%3) * (ButtonWidth + Xspace)
             let y = YBorderMargin + CGFloat(index/3) * (ButtonWidth + Yspace)
-            
             view.frame = CGRect(x: x, y: y, width: ButtonWidth, height: ButtonWidth)
-            
             addSubview(view)
             buttonArray.append(view)
         }
-        
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -178,7 +163,7 @@ class GestureDrawView: UIView {
         }
     }
     
-    
+    //reset status
     func enterArgin() {
         
         touchesArray.removeAll()
