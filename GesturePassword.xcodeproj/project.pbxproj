@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		5CFA8991856CFEF7BE043E54 /* Pods_GesturePassword.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DDCAEBFB9476103FCEA2774 /* Pods_GesturePassword.framework */; };
+		AD0125301EA5B92100A2D99D /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD01252F1EA5B92100A2D99D /* Helper.swift */; };
 		AD4740511DAF55B70079C71A /* GestureDrawView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD47404E1DAF55B70079C71A /* GestureDrawView.swift */; };
 		AD4740521DAF55B70079C71A /* GesturePasswordButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD47404F1DAF55B70079C71A /* GesturePasswordButton.swift */; };
 		AD4740531DAF55B70079C71A /* GesturePasswordIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD4740501DAF55B70079C71A /* GesturePasswordIndicatorView.swift */; };
@@ -22,6 +23,7 @@
 /* Begin PBXFileReference section */
 		65D6E68E0C87DD0B42CC3A22 /* Pods-GesturePassword.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GesturePassword.release.xcconfig"; path = "Pods/Target Support Files/Pods-GesturePassword/Pods-GesturePassword.release.xcconfig"; sourceTree = "<group>"; };
 		9DDCAEBFB9476103FCEA2774 /* Pods_GesturePassword.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GesturePassword.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AD01252F1EA5B92100A2D99D /* Helper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
 		AD47404E1DAF55B70079C71A /* GestureDrawView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GestureDrawView.swift; sourceTree = "<group>"; };
 		AD47404F1DAF55B70079C71A /* GesturePasswordButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GesturePasswordButton.swift; sourceTree = "<group>"; };
 		AD4740501DAF55B70079C71A /* GesturePasswordIndicatorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GesturePasswordIndicatorView.swift; sourceTree = "<group>"; };
@@ -100,6 +102,7 @@
 				AD9CDAA81DAF3C8B0099522B /* AppDelegate.swift */,
 				AD9CDAAA1DAF3C8B0099522B /* ViewController.swift */,
 				AD4740541DAF568B0079C71A /* GesturePasswordVC.swift */,
+				AD01252F1EA5B92100A2D99D /* Helper.swift */,
 				AD9CDAAC1DAF3C8B0099522B /* Main.storyboard */,
 				AD9CDAAF1DAF3C8B0099522B /* Assets.xcassets */,
 				AD9CDAB11DAF3C8B0099522B /* LaunchScreen.storyboard */,
@@ -138,7 +141,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0800;
-				LastUpgradeCheck = 0800;
+				LastUpgradeCheck = 0830;
 				ORGANIZATIONNAME = rongteng;
 				TargetAttributes = {
 					AD9CDAA41DAF3C8B0099522B = {
@@ -233,6 +236,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AD4740521DAF55B70079C71A /* GesturePasswordButton.swift in Sources */,
+				AD0125301EA5B92100A2D99D /* Helper.swift in Sources */,
 				AD9CDAAB1DAF3C8B0099522B /* ViewController.swift in Sources */,
 				AD9CDAA91DAF3C8B0099522B /* AppDelegate.swift in Sources */,
 				AD4740551DAF568B0079C71A /* GesturePasswordVC.swift in Sources */,
@@ -304,7 +308,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -348,7 +352,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
